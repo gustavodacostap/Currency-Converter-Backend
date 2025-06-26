@@ -30,3 +30,4 @@ C:\Users\gustavo2000926\.vscode\cli\CurrencyConverter.Backend\obj\Debug\net9.0\r
 C:\Users\gustavo2000926\.vscode\cli\CurrencyConverter.Backend\obj\Debug\net9.0\CurrencyConverter.Backend.pdb
 C:\Users\gustavo2000926\.vscode\cli\CurrencyConverter.Backend\obj\Debug\net9.0\CurrencyConverter.Backend.genruntimeconfig.cache
 C:\Users\gustavo2000926\.vscode\cli\CurrencyConverter.Backend\obj\Debug\net9.0\ref\CurrencyConverter.Backend.dll
+C:\Users\gustavo2000926\.vscode\cli\CurrencyConverter.Backend\obj\Debug\net9.0\CurrencyConverter.Backend.sourcelink.json

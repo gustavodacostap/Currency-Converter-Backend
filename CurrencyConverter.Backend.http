@@ -1,6 +1,5 @@
 @CurrencyConverter.Backend_HostAddress = http://localhost:5276
 
-GET {{CurrencyConverter.Backend_HostAddress}}/weatherforecast/
+### Converter USD para BRL
+GET http://localhost:5276/api/converter?from=USD&to=BRL&amount=100
 Accept: application/json
-
-###
