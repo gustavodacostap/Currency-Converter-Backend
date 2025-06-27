@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using CurrencyConverter.Backend.Services;
 
 namespace CurrencyConverter.Backend.Controllers

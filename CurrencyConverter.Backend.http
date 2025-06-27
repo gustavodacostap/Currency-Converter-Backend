@@ -1,5 +1,5 @@
 @CurrencyConverter.Backend_HostAddress = http://localhost:5276
 
 ### Converter USD para BRL
-GET http://localhost:5276/api/converter?from=USD&to=BRL&amount=100
+GET http://localhost:5276/api/converter?from=USD&to=BRL&amount=1
 Accept: application/json

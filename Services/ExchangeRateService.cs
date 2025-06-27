@@ -1,6 +1,4 @@
-using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
 using CurrencyConverter.Backend.Models;
 using CurrencyConverter.Backend.Configurations;
 using Microsoft.Extensions.Options;
