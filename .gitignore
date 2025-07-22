@@ -30,3 +30,5 @@ packages/
 # Local history
 appsettings.json
 appsettings.Development.json
+
+.env

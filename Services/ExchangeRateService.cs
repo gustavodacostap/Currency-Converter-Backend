@@ -1,27 +1,27 @@
 using System.Text.Json;
 using CurrencyConverter.Backend.Models;
 using CurrencyConverter.Backend.Configurations;
-using Microsoft.Extensions.Options;
 
 namespace CurrencyConverter.Backend.Services
 {
     public class ExchangeRateService
     {
         private readonly HttpClient _httpClient;
-        private readonly CurrencyApiOptions _options;
+        private readonly string _baseUrl;
+        private readonly string _apiKey;
 
-        public ExchangeRateService(HttpClient httpClient, IOptions<CurrencyApiOptions> options)
+        public ExchangeRateService(HttpClient httpClient, CurrencyApiOptions options)
         {
             _httpClient = httpClient;
-            _options = options.Value;
+            _baseUrl = options.BaseUrl;
+            _apiKey = options.ApiKey;
         }
 
         public async Task<ConversionResult?> ConvertCurrencyAsync(string from, string to, decimal amount)
         {
             try
             {
-                // 1. Busca a taxa base_currency -> to
-                string url = $"{_options.BaseUrl}/latest?apikey={_options.ApiKey}&base_currency={from}&currencies={to}";
+                string url = $"{_baseUrl}/latest?apikey={_apiKey}&base_currency={from}&currencies={to}";
 
                 var response = await _httpClient.GetAsync(url);
 
@@ -33,10 +33,8 @@ namespace CurrencyConverter.Backend.Services
 
                 var json = await response.Content.ReadAsStringAsync();
                 using var doc = JsonDocument.Parse(json);
-
                 var root = doc.RootElement;
 
-                // Pega a taxa de conversão dentro de "data"
                 if (!root.TryGetProperty("data", out var dataElement))
                     return null;
 

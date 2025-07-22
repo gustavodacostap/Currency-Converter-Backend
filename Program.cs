@@ -13,7 +13,18 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.Configure<CurrencyApiOptions>(builder.Configuration.GetSection("CurrencyApi"));
+var baseUrl = Environment.GetEnvironmentVariable("CURRENCY_API_BASE_URL") 
+              ?? "https://api.freecurrencyapi.com/v1";
+
+var apiKey = Environment.GetEnvironmentVariable("CURRENCY_API_KEY") 
+             ?? throw new Exception("API key não definida.");
+
+builder.Services.AddSingleton(new CurrencyApiOptions
+{
+    BaseUrl = baseUrl,
+    ApiKey = apiKey
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer(); 
 builder.Services.AddSwaggerGen();
