@@ -2,8 +2,6 @@
 
 Este é o backend de um conversor de moedas em tempo real, desenvolvido com **ASP.NET Core 9**, que consome uma API externa de câmbio para retornar valores convertidos entre duas moedas.
 
----
-
 ## 🚀 Funcionalidades
 
 - API RESTful para conversão de moedas
@@ -11,8 +9,6 @@ Este é o backend de um conversor de moedas em tempo real, desenvolvido com **AS
 - Cálculo e resposta com valor convertido
 - Suporte a parâmetros via query string (`from`, `to`, `amount`)
 - Swagger UI para teste dos endpoints
-
----
 
 ## 🧰 Tecnologias Utilizadas
 
